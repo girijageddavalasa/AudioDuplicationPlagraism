@@ -1,7 +1,5 @@
 # AUDIO DUPLICATION AND PLAGIARISM DETECTION
 
-This project implements an end-to-end **audio duplication and plagiarism detection pipeline**, combining fingerprint-based copy detection with feature-level similarity analysis. It leverages robust audio feature extraction, fingerprinting, and similarity metrics to identify identical or near-duplicate audio files — including re-orchestrated or transformed versions of the same track.
-
 ---
 
 ## Project Architecture
