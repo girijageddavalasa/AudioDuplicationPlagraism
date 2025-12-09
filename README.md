@@ -40,25 +40,20 @@ This foundation ensures **reliability, scalability, and traceability** for large
 
 ## 1Duplication — Fingerprinting & Chroma Analysis
 
-Implemented dual pipelines for detecting both **exact and transformed copies**:
+Chroma (Librosa-based):
 
-### Dejavu-Based Fingerprinting
+Chroma represents what notes are played over time in an audio file, regardless of how fast or slow the song is. It converts sound into 12 pitch classes (C to B) and creates a “chromagram” — a heatmap showing which notes are active at each time. Because it focuses on pitch content and not timing, it can still recognize a song even if the playback speed changes or small edits are made.
 
-- Generates spectrograms and identifies strong spectral peaks.
-- Converts peaks into **compact hash fingerprints**.
-- Stores fingerprints in a database.
-- Matches query audio against reference tracks to find near-exact duplicates.
+Dejavu (Fingerprinting):
 
-### Chroma & Feature Analysis
+Dejavu identifies specific recordings by finding unique “spectral peaks” — strong frequency points in the spectrogram. It turns these into compact digital fingerprints (hashes) that can be stored and compared quickly. This makes it great for detecting exact or nearly identical copies, even if the volume or quality changes.
 
-- Extracts **deep chroma-based features**:
-  - Chroma STFT, CQT, CENS
-  - MFCCs, Mel Spectrograms
-  - Spectral contrast, roll-off, tonnetz, tempo, harmonic/percussive ratios
-- Saves both JSON feature files and visual plots (waveform, spectrogram).
-- Enables detection of **melodic-specific or speed-modified plagiarism**.
+Working Together:
 
-Together, these modules provide **audio fingerprinting precision** alongside **semantic similarity detection** for robust plagiarism analysis.
+Chroma = detects similar musical content (good for tempo-changed or edited versions).
+
+Dejavu = detects exact or near-exact matches (good for duplicate detection).
+Together, they let the project find both identical copies and speed-modified or slightly altered versions of the same song.
 
 ---
 
