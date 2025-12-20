@@ -1,0 +1,15 @@
+{
+  "query_song_id": "metal_00007",
+  "candidate_song_id": "metal.00007",
+  "query_time": [
+    0.0,
+    30.0
+  ],
+  "candidate_time": [
+    0.0,
+    30.0
+  ],
+  "duration": 30.0,
+  "average_similarity": 1.0,
+  "segments_matched": 19
+}
